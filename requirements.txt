@@ -6,3 +6,4 @@ ipython
 pandas
 sympy
 nose
+opencv-python
