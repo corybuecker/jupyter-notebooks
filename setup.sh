@@ -1,11 +1,9 @@
 #!/bin/bash
 
-# pip freeze | xargs pip uninstall -y
-# pip install -r requirements.txt --upgrade
+source .venv/bin/activate
 
-
-export NODE_OPTIONS=--max-old-space-size=4096
-
+pip freeze | xargs pip uninstall -y
+pip install -r requirements.txt --upgrade
 
 # Jupyter widgets extension
 jupyter labextension install @jupyter-widgets/jupyterlab-manager --no-build
@@ -17,8 +15,4 @@ jupyter labextension install jupyterlab-plotly --no-build
 jupyter labextension install plotlywidget --no-build
 
 # Build extensions (must be done to activate extensions since --no-build is used above)
-jupyter lab build
-
-# Unset NODE_OPTIONS environment variable
-# (OS X/Linux)
-unset NODE_OPTIONS
+jupyter lab build --dev-build=True --minimize=False

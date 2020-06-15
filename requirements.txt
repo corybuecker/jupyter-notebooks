@@ -2,10 +2,9 @@ jupyterlab
 numpy
 scipy
 matplotlib
-ipython
 pandas
-sympy
-nose
 opencv-python
 plotly
-google-cloud-firestore
+pymongo
+sqlalchemy
+psycopg2
